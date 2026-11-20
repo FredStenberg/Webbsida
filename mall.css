@@ -102,3 +102,48 @@ p.b { text-align: left; }
 p.c { text-align: center; }
 p.a { text-align: right; }
 
+/* Mobil: dessa regler gäller när fönstret är högst 768 CSS-pixlar brett. */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    /* Extra plats längst ner så att den fasta menyn inte täcker innehållet. */
+    padding: 12px 12px 80px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  /* Lägg bilderna under varandra i stället för i en bred rad. */
+  .hembilder,
+  .fiskebilder,
+  .båtar,
+  .båtar2,
+  .båtar3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Krymp stora bilder och videor så att de ryms, med rätt proportioner. */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    margin: 5px 0;
+  }
+
+  .row {
+    /* Räkna in kantlinjen i menyns bredd på 100 %. */
+    box-sizing: border-box;
+  }
+
+  .row > a {
+    flex: 1;
+    padding: 12px 8px;
+    text-align: center;
+  }
+}
+
