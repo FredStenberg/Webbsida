@@ -102,11 +102,9 @@ p.b { text-align: left; }
 p.c { text-align: center; }
 p.a { text-align: right; }
 
-/* Mobil: dessa regler gäller när fönstret är högst 768 CSS-pixlar brett. */
 @media (max-width: 768px) {
   body {
     margin: 0;
-    /* Extra plats längst ner så att den fasta menyn inte täcker innehållet. */
     padding: 12px 12px 80px;
     line-height: 1.5;
     overflow-wrap: anywhere;
@@ -117,7 +115,6 @@ p.a { text-align: right; }
     line-height: 1.2;
   }
 
-  /* Lägg bilderna under varandra i stället för i en bred rad. */
   .hembilder,
   .fiskebilder,
   .båtar,
@@ -127,7 +124,6 @@ p.a { text-align: right; }
     align-items: center;
   }
 
-  /* Krymp stora bilder och videor så att de ryms, med rätt proportioner. */
   img,
   video {
     max-width: 100%;
@@ -136,7 +132,64 @@ p.a { text-align: right; }
   }
 
   .row {
-    /* Räkna in kantlinjen i menyns bredd på 100 %. */
+    box-sizing: border-box;
+  }
+
+  .row > a {
+    flex: 1;
+    padding: 12px 8px;
+    text-align: center;
+  }
+}
+
+*{
+   box-sizing: border-box;
+}
+
+
+@media (min-width: 769px) and (max-width: 1032px) {
+  body {
+    margin: 0;
+    padding: 12px 12px 80px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .hembilder,
+  .fiskebilder,
+  .båtar2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    align-items: start;
+  }
+
+  .hembilder > img,
+  .fiskebilder > img,
+  .båtar2 > img,
+  .båtar2 > video {
+    width: 100%;
+    margin: 0;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hembilder > img[src="Fisk1.jpg"],
+  .fiskebilder > img[src="Fisk1.jpg"] {
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .row {
     box-sizing: border-box;
   }
 
