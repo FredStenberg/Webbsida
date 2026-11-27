@@ -81,6 +81,11 @@ video
 }
 
 
+.kontakt{
+	
+  font-family: "Comic Relief", system-ui;
+  }
+
 
 .row {
   display: flex;
@@ -95,10 +100,15 @@ video
 }
 
 .row > p {
-  flex: 1;
+  flex: 1;  
 }
+.row > a {
+  font-family: "Comic Relief", system-ui;
+  }
 
-p.b { text-align: left; }
+
+
+p.b { text-align: left;  }
 p.c { text-align: center; }
 p.a { text-align: right; }
 
@@ -133,6 +143,7 @@ p.a { text-align: right; }
 
   .row {
     box-sizing: border-box;
+	 
   }
 
   .row > a {
@@ -191,6 +202,8 @@ p.a { text-align: right; }
 
   .row {
     box-sizing: border-box;
+	
+	font-family: Arial, Helvetica, sans-serif;
   }
 
   .row > a {
